@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ScoreComponent {
 
-  @Input() value: number;
+  @Input() value = 0;
   @Output() notify = new EventEmitter<string>();
 
   onNotify() {
