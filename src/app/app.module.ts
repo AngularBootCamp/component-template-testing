@@ -5,11 +5,8 @@ import { AppComponent } from './app.component';
 import { ScoreComponent } from './score/score.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ScoreComponent
-  ],
+  declarations: [AppComponent, ScoreComponent],
   imports: [BrowserModule],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

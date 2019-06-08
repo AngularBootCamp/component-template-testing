@@ -1,19 +1,21 @@
 import { Component, DebugElement } from '@angular/core';
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  async
+} from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { ScoreComponent } from './score.component';
 
 describe('ScoreComponent', () => {
-
   let component: ScoreComponent;
   let fixture: ComponentFixture<ScoreComponent>;
 
   beforeEach(async(() => {
     return TestBed.configureTestingModule({
-      declarations: [ ScoreComponent ]
-    })
-      .compileComponents();
+      declarations: [ScoreComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -27,7 +29,9 @@ describe('ScoreComponent', () => {
 
     beforeEach(() => {
       // find the DOM elements we expect to change
-      const valueDisplayDe = fixture.debugElement.query(By.css('.value-display'));
+      const valueDisplayDe = fixture.debugElement.query(
+        By.css('.value-display')
+      );
       valueDisplayEl = valueDisplayDe.nativeElement;
     });
 
@@ -52,7 +56,9 @@ describe('ScoreComponent', () => {
     it('should result in a notify event when clicked', () => {
       component.value = 42;
       let notification = '';
-      component.notify.subscribe((event: string) => notification = event);
+      component.notify.subscribe(
+        (event: string) => (notification = event)
+      );
       buttonDe.triggerEventHandler('click', null);
       expect(notification).toBe('Your score was 42');
       // Note: this works because EventEmitters are synchronous by default
@@ -61,10 +67,12 @@ describe('ScoreComponent', () => {
 });
 
 describe('ScoreComponent inside a test host', () => {
-
   @Component({
     template: `
-      <show-score [value]="score" (notify)="onNotify($event)"></show-score>
+      <show-score
+        [value]="score"
+        (notify)="onNotify($event)"
+      ></show-score>
     `
   })
   class TestHostComponent {
@@ -82,15 +90,16 @@ describe('ScoreComponent inside a test host', () => {
 
   beforeEach(async(() => {
     return TestBed.configureTestingModule({
-      declarations: [ TestHostComponent, ScoreComponent ]
-    })
-      .compileComponents();
+      declarations: [TestHostComponent, ScoreComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestHostComponent);
     testHost = fixture.componentInstance;
-    scoreComponentDe = fixture.debugElement.query(By.css('show-score'));
+    scoreComponentDe = fixture.debugElement.query(
+      By.css('show-score')
+    );
   });
 
   describe('score text', () => {
@@ -98,7 +107,9 @@ describe('ScoreComponent inside a test host', () => {
 
     beforeEach(() => {
       // find the DOM elements we expect to change
-      const valueDisplayDe = scoreComponentDe.query(By.css('.value-display'));
+      const valueDisplayDe = scoreComponentDe.query(
+        By.css('.value-display')
+      );
       valueDisplayEl = valueDisplayDe.nativeElement;
     });
 

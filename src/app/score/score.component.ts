@@ -1,11 +1,15 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output
+} from '@angular/core';
 
 @Component({
   selector: 'show-score',
   templateUrl: './score.component.html'
 })
 export class ScoreComponent {
-
   @Input() value = 0;
   @Output() notify = new EventEmitter<string>();
 
