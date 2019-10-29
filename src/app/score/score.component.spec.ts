@@ -36,7 +36,7 @@ describe('ScoreComponent', () => {
     });
 
     it('should start with no score', () => {
-      expect(valueDisplayEl.textContent).toEqual('');
+      expect(valueDisplayEl.textContent).toEqual('0');
     });
 
     it('should display a score that is set', () => {
