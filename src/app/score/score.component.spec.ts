@@ -2,7 +2,7 @@ import { Component, DebugElement } from '@angular/core';
 import {
   ComponentFixture,
   TestBed,
-  async
+  waitForAsync
 } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
@@ -12,11 +12,10 @@ describe('ScoreComponent', () => {
   let component: ScoreComponent;
   let fixture: ComponentFixture<ScoreComponent>;
 
-  beforeEach(async(() => {
-    return TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() =>
+    TestBed.configureTestingModule({
       declarations: [ScoreComponent]
-    }).compileComponents();
-  }));
+    }).compileComponents()));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ScoreComponent);
@@ -88,11 +87,10 @@ describe('ScoreComponent inside a test host', () => {
   let fixture: ComponentFixture<TestHostComponent>;
   let testHost: TestHostComponent;
 
-  beforeEach(async(() => {
-    return TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() =>
+    TestBed.configureTestingModule({
       declarations: [TestHostComponent, ScoreComponent]
-    }).compileComponents();
-  }));
+    }).compileComponents()));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestHostComponent);
