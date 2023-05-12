@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'show-score',
+  selector: 'app-show-score',
   templateUrl: './score.component.html'
 })
 export class ScoreComponent {

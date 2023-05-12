@@ -68,10 +68,10 @@ describe('ScoreComponent', () => {
 describe('ScoreComponent inside a test host', () => {
   @Component({
     template: `
-      <show-score
+      <app-show-score
         [value]="score"
         (notify)="onNotify($event)"
-      ></show-score>
+      ></app-show-score>
     `
   })
   class TestHostComponent {
@@ -96,7 +96,7 @@ describe('ScoreComponent inside a test host', () => {
     fixture = TestBed.createComponent(TestHostComponent);
     testHost = fixture.componentInstance;
     scoreComponentDe = fixture.debugElement.query(
-      By.css('show-score')
+      By.css('app-show-score')
     );
   });
 
