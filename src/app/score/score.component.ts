@@ -7,7 +7,18 @@ import {
 
 @Component({
   selector: 'app-show-score',
-  templateUrl: './score.component.html'
+  template: `
+    <p>
+      <strong>
+        Your score is:
+        <span class="value-display">{{ value }}</span>
+        !
+      </strong>
+    </p>
+    <p>
+      <button (click)="onNotify()">Notify</button>
+    </p>
+  `
 })
 export class ScoreComponent {
   @Input() value = 0;
