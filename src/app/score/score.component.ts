@@ -18,7 +18,8 @@ import {
     <p>
       <button (click)="onNotify()">Notify</button>
     </p>
-  `
+  `,
+  standalone: true
 })
 export class ScoreComponent {
   @Input() value = 0;

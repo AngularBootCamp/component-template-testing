@@ -14,7 +14,7 @@ describe('ScoreComponent', () => {
 
   beforeEach(waitForAsync(() =>
     TestBed.configureTestingModule({
-      declarations: [ScoreComponent]
+      imports: [ScoreComponent]
     }).compileComponents()));
 
   beforeEach(() => {
@@ -72,7 +72,9 @@ describe('ScoreComponent inside a test host', () => {
         [value]="score"
         (notify)="onNotify($event)"
       ></app-show-score>
-    `
+    `,
+    imports: [ScoreComponent],
+    standalone: true
   })
   class TestHostComponent {
     score = 42;
@@ -89,7 +91,7 @@ describe('ScoreComponent inside a test host', () => {
 
   beforeEach(waitForAsync(() =>
     TestBed.configureTestingModule({
-      declarations: [TestHostComponent, ScoreComponent]
+      imports: [TestHostComponent]
     }).compileComponents()));
 
   beforeEach(() => {
