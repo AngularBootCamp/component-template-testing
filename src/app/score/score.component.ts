@@ -22,7 +22,7 @@ import {
   standalone: true
 })
 export class ScoreComponent {
-  @Input() value = 0;
+  @Input({ required: true }) value!: number;
   @Output() notify = new EventEmitter<string>();
 
   onNotify() {

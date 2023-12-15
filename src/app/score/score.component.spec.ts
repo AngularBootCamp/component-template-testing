@@ -35,7 +35,7 @@ describe('ScoreComponent', () => {
     });
 
     it('should start with no score', () => {
-      expect(valueDisplayEl.textContent).toEqual('0');
+      expect(valueDisplayEl.textContent).toEqual('');
     });
 
     it('should display a score that is set', () => {
@@ -68,10 +68,7 @@ describe('ScoreComponent', () => {
 describe('ScoreComponent inside a test host', () => {
   @Component({
     template: `
-      <app-show-score
-        [value]="score"
-        (notify)="onNotify($event)"
-      ></app-show-score>
+      <app-show-score [value]="score" (notify)="onNotify($event)" />
     `,
     imports: [ScoreComponent],
     standalone: true
