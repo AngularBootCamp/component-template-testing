@@ -2,6 +2,7 @@ import {
   Component,
   EventEmitter,
   Input,
+  numberAttribute,
   Output
 } from '@angular/core';
 
@@ -22,7 +23,8 @@ import {
   standalone: true
 })
 export class ScoreComponent {
-  @Input({ required: true }) value!: number;
+  @Input({ required: true, transform: numberAttribute })
+  value!: number;
   @Output() notify = new EventEmitter<string>();
 
   onNotify() {
